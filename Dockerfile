@@ -25,19 +25,6 @@ RUN --mount=type=bind,source=pom.xml,target=pom.xml \
 
 ################################################################################
 
-# Create a stage for running the tests.
-FROM alpine as test
-
-# Copy the source code to the /app directory.
-WORKDIR /app
-COPY . .
-
-# Run tests here.
-# You need to replace this with your actual test execution command.
-RUN ./mvnw test
-
-################################################################################
-
 # Create a stage for building the application based on the stage with downloaded dependencies.
 # This Dockerfile is optimized for Java applications that output an uber jar, which includes
 # all the dependencies needed to run your app inside a JVM. If your app doesn't output an uber
