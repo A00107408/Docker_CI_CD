@@ -26,7 +26,7 @@ RUN --mount=type=bind,source=pom.xml,target=pom.xml \
 ################################################################################
 
 # Create a stage for running the tests.
-FROM package as test
+FROM alpine as test
 
 # Copy the source code to the /app directory.
 WORKDIR /app
