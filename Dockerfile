@@ -34,7 +34,6 @@ COPY . .
 
 # Run tests here.
 # You need to replace this with your actual test execution command.
-mvn -N io.takari:maven:wrapper
 RUN ./mvnw test
 
 ################################################################################
